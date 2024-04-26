@@ -1,0 +1,9 @@
+Data Source (LocalDB)\MSSQLLocalDB;
+
+Initial Catalog-Cdac;
+
+Integrated Security=True;
+
+Pooling False; Encrypt=True;
+
+Trust Server Certificate False
