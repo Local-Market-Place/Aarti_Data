@@ -1,4 +1,6 @@
-  builder.Services.AddDbContext<MyDbContext>(options=>
+719-063
+
+builder.Services.AddDbContext<MyDbContext>(options=>
   options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContext")));
   var app = builder.Build();
 
