@@ -1,10 +1,15 @@
-Data Source (LocalDB)\MSSQLLocalDB;
+  builder.Services.AddDbContext<MyDbContext>(options=>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContext")));
+  var app = builder.Build();
 
-Initial Catalog-Cdac;
+  "ConnectionStrings": {
+    "MyDbContext": "server=(LocalDB)\\MSSQLLocalDB;database=ShopData;Integrated Security=True;Pooling=False;Encrypt=True;TrustServerCertificate=False"
+  }
 
-Integrated Security=True;
 
-Pooling False; Encrypt=True;
 
-Trust Server Certificate False
+
+
+
+
 https://actsfeedback.cdac.in/feedbackSystem/
