@@ -6,10 +6,47 @@
     "MyDbContext": "server=(LocalDB)\\MSSQLLocalDB;database=ShopData;Integrated Security=True;Pooling=False;Encrypt=True;TrustServerCertificate=False"
   }
 
+  public DbSet<Catogory> Catogories { get; set; }
+/*/***/*/*/*/*/*/*/*/*/
+ public class Catogory
+ {
+     [Key]
+     public int Id { get; set; }
+
+     [Required]
+     [StringLength(50)]
+     public string ? Name { get; set; }
+
+     [Required]
+     [StringLength(50)]
+     public string ? Description { get; set; }
+
+ }
 
 
+/*//***/*/*/*/*/*/*/
+  public class Product
+  {
+       [Key]
+       public int Id { get; set; }
 
+      [Required]
+      [StringLength(50)]
+      public string Name { get; set; }
 
+      [Required]
+      [StringLength(50)]
+
+      public string? Description { get; set; }
+      
+      [Required]
+      public int Price { get; set; }
+
+      [ForeignKey("categoires")]
+      public int CatogoryID { get; set; }
+     
+      public virtual Catogory? categoires { get; set; }
+  }
 
 
 https://actsfeedback.cdac.in/feedbackSystem/
