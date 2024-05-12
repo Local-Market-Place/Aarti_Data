@@ -2,7 +2,7 @@
 
 builder.Services.AddDbContext<MyDbContext>(options=>
   options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContext")));
-  var app = builder.Build();
+
 
   "ConnectionStrings": {
     "MyDbContext": "server=(LocalDB)\\MSSQLLocalDB;database=ShopData;Integrated Security=True;Pooling=False;Encrypt=True;TrustServerCertificate=False"
