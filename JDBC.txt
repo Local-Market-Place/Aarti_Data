@@ -86,3 +86,80 @@ public class TestMain {
 
 	}
 }
+
+// html  form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration Form</title>
+<style>
+    /* Add your custom CSS styles here */
+    table {
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form id="registrationForm" action="login" method="POST" >
+    <table>
+        <tr>
+            <th><label for="firstName">First Name:</label></th>
+            <td><input type="text" id="firstName" name="firstName" required></td>
+        </tr>
+        <tr>
+            <th><label for="lastName">Last Name:</label></th>
+            <td><input type="text" id="lastName" name="lastName" required></td>
+        </tr>
+        <tr>
+            <th><label for="email">Email Address:</label></th>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <th><label for="password">Password:</label></th>
+            <td><input type="password" id="password" name="password" required></td>
+        </tr>
+        <tr>
+            <th><label for="address">Address:</label></th>
+            <td><textarea id="address" name="address" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+            <th><label for="gender">Gender:</label></th>
+            <td>
+                <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="hobbies">Hobbies:</label></th>
+            <td>
+                <input type="checkbox" id="hobby1" name="hobbies" value="hobby1"> <label for="hobby1">Hobby 1</label><br>
+                <input type="checkbox" id="hobby2" name="hobbies" value="hobby2"> <label for="hobby2">Hobby 2</label><br>
+                <input type="checkbox" id="hobby3" name="hobbies" value="hobby3"> <label for="hobby3">Hobby 3</label>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="price">Price Range:</label></th>
+            <td><input type="range" id="price" name="price" min="0" max="1000"></td>
+        </tr>
+        <tr>
+            <th><label for="acceptRules">I accept the rules:</label></th>
+            <td><input type="checkbox" id="acceptRules" name="acceptRules" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
