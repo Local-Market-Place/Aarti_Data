@@ -117,7 +117,7 @@ public class TestMain {
 </div>
 
 
-<form id="registrationForm" action="MongoDB" method="POST" >
+<form id="registrationForm" action="MongoDB" method="get" >
     <table>
         <tr>
             <th><label for="firstName">First Name:</label></th>
@@ -222,3 +222,76 @@ public class TestMain {
 </body>
 </html>
 
+
+// do get method
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		PrintWriter writer = resp.getWriter();
+		resp.setContentType("text/html");
+			
+		final String user = "root";
+		final String pass = "Rushikesh@5046";
+		final String sqlcon = "jdbc:mysql://localhost:3306/rushi";
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+	
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection(sqlcon, user, pass);
+			if (con != null && !con.isClosed()) 
+			{
+				/************************** Insert for *******************/
+				pst = con.prepareStatement("INSERT INTO java_crud values (?,?,?,?,?,?,?,?,?)");
+				String FName =req.getParameter("firstName");
+				String LName=req.getParameter("lastName");
+				String Email=req.getParameter("email");
+				String Password=req.getParameter("password");
+				String Address =req.getParameter("address");
+				String Gender=req.getParameter("gender");
+				String[] hobbies = req.getParameterValues("hobbies");
+				String price=req.getParameter("price");
+				String acceptRules  =req.getParameter("acceptRules");
+
+				
+				
+				pst.setString(1,FName);
+				pst.setString(2,LName);
+				pst.setString(3,Email);
+				pst.setString(4,Password);
+				pst.setString(5,Address);
+				pst.setString(6,Gender);
+			  	pst.setString(7, String.join(", ", hobbies));
+			  	pst.setString(8,price);
+			  	pst.setString(9,acceptRules);
+			
+				// **************************Validation*******************/
+				int rowsAffected = pst.executeUpdate();
+
+				// Checking if the update was successful
+				if (rowsAffected > 0) {
+					writer.println("<h1>Succfully Insert  in Database/h1>");
+				} else {
+					writer.println("<h1> Faild data is not insert in database/h1>");
+				}
+			} else 
+			{
+				System.out.println("Connection is closed.");
+			}
+
+		} catch (SQLException | ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+		finally
+		{
+			  try 
+			  {
+				con.close();
+			} catch (SQLException e) 
+			  {
+				
+				e.printStackTrace();
+			}
+		}
+
+	}
