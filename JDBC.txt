@@ -87,7 +87,8 @@ public class TestMain {
 	}
 }
 
-// html  form
+// html  Databse form
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,3 +170,55 @@ public class TestMain {
 
 </body>
 </html>
+
+//Index Click Button 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration Form</title>
+<style>
+/* Center the buttons */
+.button-container {
+	text-align: center;
+}
+
+/* Common button styles */
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* Green button */
+.green-button {
+	background-color: #4CAF50; /* Green */
+	color: white;
+	margin-right: 10px;
+}
+
+/* Red button */
+.red-button {
+	background-color: #f44336; /* Red */
+	color: white;
+}
+</style>
+</head>
+<body>
+
+	<div class="button-container">
+		<h1>Add Information in Database</h1>
+		<a href="SQL.html" class="button green-button"> Add Infomation Sql
+			Database</a> <a href="MongoDB.html" class="button red-button"> Add Infomation MongoDB Database</a>
+	</div>
+
+</body>
+</html>
+
