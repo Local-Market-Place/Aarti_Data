@@ -95,7 +95,10 @@ public class TestMain {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Registration Form</title>
 <style>
-    /* Add your custom CSS styles here */
+.head {
+	text-align: center;
+}
+
     table {
         width: 100%;
     }
@@ -107,10 +110,13 @@ public class TestMain {
 </style>
 </head>
 <body>
+<div class="head">
+<h1>User Registration Form</h2>
+<br>
+</div>
 
-<h2>User Registration Form</h2>
 
-<form id="registrationForm" action="login" method="POST" >
+<form id="registrationForm" action="MongoDB" method="POST" >
     <table>
         <tr>
             <th><label for="firstName">First Name:</label></th>
